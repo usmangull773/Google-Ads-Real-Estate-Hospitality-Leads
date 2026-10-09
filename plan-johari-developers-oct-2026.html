@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>30 Day Plan: Johari Developers</title>
+<style>
+:root{--navy:#0b1f36;--card:#12355b;--blue:#0f4c81;--gold:#c8a24a;--gold-l:#e3c77f;--bg:#e9eff6;--white:#fff;--red:#b3261e;--green:#1f6f43;--text:#1b2733;--muted:#5a6878}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+strong{font-weight:700}
+.hl{color:var(--gold);font-weight:700}
+.dark .hl{color:var(--gold-l)}
+/* hero */
+.hero{background:var(--navy);color:#fff;border-bottom:6px solid var(--gold);padding:28px 0 56px}
+.topbar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:#b9c6d6;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:40px}
+.label{color:var(--gold-l);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.hero h1{font-size:44px;line-height:1.15;margin:10px 0 14px}
+.hero .lead{font-size:20px;color:#dbe4ee;max-width:760px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0 36px;font-size:14px;color:#b9c6d6}
+.meta span b{color:#fff;font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kpi{background:var(--card);border-radius:10px;padding:22px}
+.kpi .n{font-size:40px;font-weight:800;color:var(--gold-l);line-height:1}
+.kpi .t{font-size:14px;color:#dbe4ee;margin-top:10px}
+/* section heads */
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:12px}
+.num{color:var(--blue);font-weight:800;font-size:15px;letter-spacing:.1em}
+.dark .num{color:var(--gold-l)}
+h2{font-size:32px;line-height:1.2}
+.intro{font-size:18px;color:var(--muted);max-width:780px;margin-bottom:34px}
+.dark .intro{color:#c3cfdc}
+/* findings */
+.finding{background:#fff;border-radius:10px;box-shadow:0 2px 14px rgba(11,31,54,.08);padding:26px;margin-bottom:22px;border-left:6px solid var(--red)}
+.finding.med{border-left-color:var(--gold)}
+.fh{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start}
+.finding h3{font-size:20px;line-height:1.3;max-width:760px}
+.tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:4px;color:#fff;background:var(--blue);white-space:nowrap}
+.tag.m{background:var(--gold);color:var(--navy)}
+.finding p{margin:10px 0 16px;color:#33414f}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #e1e7ee}
+thead th{background:var(--navy);color:#fff;font-weight:600}
+.cmp th.bad{background:var(--red)}
+.cmp th.good{background:var(--green)}
+.cmp td.bad{color:var(--red)}
+.cmp td.good{color:var(--green)}
+.tw{overflow-x:auto}
+/* flow diagram */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:6px}
+.node{background:var(--bg);border:1px solid #cfd9e5;border-radius:8px;padding:10px 12px;font-size:14px;font-weight:600;text-align:center;min-width:110px}
+.node.crm{background:var(--blue);color:#fff;border-color:var(--blue)}
+.arr{color:var(--muted);font-weight:700}
+.break{border:2px dashed var(--red);color:var(--red);background:#fff}
+.fix{border:2px solid var(--green);color:var(--green);background:#fff}
+.flowlbl{font-size:13px;font-weight:700;margin:14px 0 6px;text-transform:uppercase;letter-spacing:.06em}
+.flowlbl.r{color:var(--red)}.flowlbl.g{color:var(--green)}
+/* plan */
+.white{background:#fff}
+.timeline{background:var(--navy);border-radius:12px;padding:26px;color:#fff;margin-bottom:34px}
+.tl-row{display:grid;grid-template-columns:200px 1fr;gap:14px;align-items:center;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.tl-row:last-child{border-bottom:0}
+.tl-head{color:#b9c6d6;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.tl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.tl-grid .w{text-align:center}
+.tl-name{font-size:14px;color:#dbe4ee}
+.bar{height:14px;background:var(--gold);border-radius:3px}
+.steps{display:grid;gap:16px}
+.step{display:grid;grid-template-columns:54px 1fr;gap:16px;background:var(--bg);border-radius:10px;padding:22px}
+.step .sn{width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:18px}
+.step h3{font-size:18px;margin-bottom:4px}
+.step p{color:#33414f;font-size:15px}
+.step .why{margin-top:8px;font-size:14px;color:var(--green);font-weight:600}
+/* results */
+.dark{background:var(--navy);color:#fff}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rc{background:var(--card);border-radius:10px;padding:24px}
+.rc .k{font-size:13px;color:#b9c6d6;text-transform:uppercase;letter-spacing:.08em}
+.rc .big{font-size:38px;font-weight:800;color:var(--gold-l);margin:8px 0 2px;line-height:1.1}
+.rc .sub{font-size:14px;color:#dbe4ee;margin-bottom:18px}
+.bars{display:grid;gap:10px}
+.br .bl{font-size:12px;color:#b9c6d6;display:flex;justify-content:space-between}
+.track{background:rgba(255,255,255,.08);border-radius:3px;height:16px;margin-top:4px}
+.fill{height:16px;border-radius:3px;background:#5d7a9c}
+.fill.g{background:var(--gold)}
+.rc .ctx{font-size:13px;color:#9fb0c3;margin-top:16px}
+.note{font-size:13px;color:#9fb0c3;margin-top:22px}
+/* next */
+.ngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.nc{background:#fff;border-radius:10px;border-top:5px solid var(--gold);padding:24px;box-shadow:0 2px 14px rgba(11,31,54,.06)}
+.nc .num{display:block;margin-bottom:6px}
+.nc h3{font-size:18px;margin-bottom:8px}
+.nc p,.nc li{font-size:15px;color:#33414f}
+.nc ul{padding-left:18px}
+/* cta + footer */
+.cta{background:var(--gold);color:var(--navy);text-align:center;padding:52px 0}
+.cta h2{font-size:32px}
+.cta p{font-size:18px;margin-top:8px}
+footer{background:var(--navy);color:#b9c6d6;text-align:center;padding:28px 0;font-size:14px}
+footer b{color:#fff}
+@media (max-width:820px){
+ .kpis,.rgrid,.ngrid{grid-template-columns:1fr}
+ .hero h1{font-size:32px}
+ h2{font-size:26px}
+ .tl-row{grid-template-columns:1fr;gap:6px}
+ section{padding:48px 0}
+}
+@media (max-width:420px){
+ .wrap{padding:0 16px}
+ .hero h1{font-size:28px}
+ .kpi .n{font-size:34px}
+ .step{grid-template-columns:1fr}
+ .finding{padding:20px}
+ th,td{padding:8px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+ <div class="wrap">
+  <div class="topbar"><span>Google Ads, tracking and CRM plan</span><span>October 2026</span></div>
+  <div class="label">30 day plan prepared for</div>
+  <h1>Johari Developers</h1>
+  <p class="lead">A Google Ads setup that learns from <span class="hl">qualified buyers in Pipedrive</span>, not from cheap enquiries.</p>
+  <div class="meta">
+   <span>Projects: <b>Sandbank Villas, Johari Beach Residences</b></span>
+   <span>Budget: <b>about $3,000 a month, Search</b></span>
+   <span>CRM: <b>Pipedrive</b></span>
+   <span>Markets: <b>several countries</b></span>
+  </div>
+  <div class="kpis">
+   <div class="kpi"><div class="n">2</div><div class="t">Google Ads tags loading on every page of sandbankvillas.com</div></div>
+   <div class="kpi"><div class="n">0</div><div class="t">click IDs found in the enquiry path, so CRM stages cannot be sent back to Google</div></div>
+   <div class="kpi"><div class="n">3</div><div class="t">lead channels (form, call booking, WhatsApp) that need their own tracked outcome</div></div>
+  </div>
+ </div>
+</header>
+
+<section>
+ <div class="wrap">
+  <div class="sh"><span class="num">01</span><h2>What we found</h2></div>
+  <p class="intro">A public review of sandbankvillas.com, without account access. The site already has the right tools in place: GTM, GA4, Google Ads and the Meta pixel. The gap is that <span class="hl">none of them can see which enquiry became a qualified buyer</span>, so bidding has nothing to learn from except form fills.</p>
+
+  <div class="finding">
+   <div class="fh"><h3>Two Google Ads tags and a hard coded GA4 tag run beside the GTM container</h3><span class="tag">High impact</span></div>
+   <p>The site loads <strong>AW-11471579855 and AW-10999048153</strong> directly in the page code, plus GA4 (G-TH7D999G6Z), while GTM-5XKJZ847 is also installed. If any of these are also fired from GTM, or both Ads tags record the same lead, conversions are counted twice and the numbers will never match Pipedrive.</p>
+   <div class="tw"><table class="cmp">
+    <thead><tr><th class="bad">Now</th><th class="good">After week 1</th></tr></thead>
+    <tbody>
+     <tr><td class="bad">2 Google Ads tags in the page code</td><td class="good">1 live Ads account, tags managed only in GTM</td></tr>
+     <tr><td class="bad">GA4 hard coded and GTM installed</td><td class="good">GA4 fired once, from GTM, with clean events</td></tr>
+     <tr><td class="bad">Unclear which action is primary</td><td class="good">One primary conversion per lead type, the rest secondary</td></tr>
+     <tr><td class="bad">Ad numbers and CRM numbers differ</td><td class="good">A weekly reconciliation that ties both together</td></tr>
+    </tbody>
+   </table></div>
+  </div>
+
+  <div class="finding">
+   <div class="fh"><h3>The click ID is lost between the ad and Pipedrive</h3><span class="tag">High impact</span></div>
+   <p>Enquiries come through Squarespace forms and a <strong>Pipedrive Scheduler embedded in an iframe</strong> on the schedule a call page. No GCLID field was found on these pages, and tags on the site cannot see what happens inside the scheduler. So when a lead moves to qualified or reservation in Pipedrive, there is no link back to the click that produced it. It is also worth confirming the scheduler sits in the Pipedrive workspace your team owns, so the import runs from your own CRM.</p>
+   <div class="flowlbl r">Today</div>
+   <div class="flow">
+    <div class="node">Ad click</div><span class="arr">&rarr;</span>
+    <div class="node">Form or scheduler</div><span class="arr">&rarr;</span>
+    <div class="node crm">Pipedrive deal</div><span class="arr">&rarr;</span>
+    <div class="node break">No return path to Google Ads</div>
+   </div>
+   <div class="flowlbl g">After week 2</div>
+   <div class="flow">
+    <div class="node">Ad click + GCLID</div><span class="arr">&rarr;</span>
+    <div class="node">Form or scheduler, ID stored</div><span class="arr">&rarr;</span>
+    <div class="node crm">Pipedrive stages</div><span class="arr">&rarr;</span>
+    <div class="node fix">Qualified, Call held, Reservation imported to Google Ads</div>
+   </div>
+  </div>
+
+  <div class="finding med">
+   <div class="fh"><h3>WhatsApp and phone are on every page, and no behavior tool is installed</h3><span class="tag m">Medium impact</span></div>
+   <p>International buyers often prefer WhatsApp, and the site links to it on every page. Each channel needs its own tracked outcome that can later be matched to a Pipedrive deal. No Microsoft Clarity or Hotjar tag was found, so there is no view yet of where buyers drop off on the villa pages.</p>
+   <div class="tw"><table>
+    <thead><tr><th>Channel</th><th>Where it sits</th><th>What we set up</th></tr></thead>
+    <tbody>
+     <tr><td>Enquiry form</td><td>Get in touch, Invest with us</td><td>Hidden GCLID, country and UTM fields saved to the Pipedrive deal</td></tr>
+     <tr><td>Call booking</td><td>Schedule a call page</td><td>Enhanced conversions for leads, matched on hashed email</td></tr>
+     <tr><td>WhatsApp</td><td>Every page</td><td>Click event in GTM plus a prefilled reference code your team logs in Pipedrive</td></tr>
+     <tr><td>Phone</td><td>Every page</td><td>Call conversion with a minimum duration, so short calls do not count</td></tr>
+     <tr><td>Page behavior</td><td>Villa and invest pages</td><td>Microsoft Clarity, free, for landing page tests</td></tr>
+    </tbody>
+   </table></div>
+  </div>
+ </div>
+</section>
+
+<section class="white">
+ <div class="wrap">
+  <div class="sh"><span class="num">02</span><h2>The 30 day plan</h2></div>
+  <p class="intro">Tracking first, then structure, then reporting. Spend stays inside the agreed range, and any budget moves are reported after the fact.</p>
+
+  <div class="timeline">
+   <div class="tl-row"><div class="tl-head">Workstream</div><div class="tl-grid tl-head"><span class="w">Week 1</span><span class="w">Week 2</span><span class="w">Week 3</span><span class="w">Week 4</span></div></div>
+   <div class="tl-row"><div class="tl-name">Tag cleanup and conversion map</div><div class="tl-grid"><div class="bar"></div><span></span><span></span><span></span></div></div>
+   <div class="tl-row"><div class="tl-name">Click ID capture and Pipedrive fields</div><div class="tl-grid"><div class="bar"></div><div class="bar"></div><span></span><span></span></div></div>
+   <div class="tl-row"><div class="tl-name">Offline conversion import</div><div class="tl-grid"><span></span><div class="bar"></div><div class="bar"></div><span></span></div></div>
+   <div class="tl-row"><div class="tl-name">Market clusters and campaign rebuild</div><div class="tl-grid"><span></span><span></span><div class="bar"></div><div class="bar"></div></div></div>
+   <div class="tl-row"><div class="tl-name">WhatsApp tracking and Clarity</div><div class="tl-grid"><span></span><span></span><div class="bar"></div><div class="bar"></div></div></div>
+   <div class="tl-row"><div class="tl-name">Weekly CRM vs ads report</div><div class="tl-grid"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div>
+  </div>
+
+  <div class="steps">
+   <div class="step"><div class="sn">1</div><div><h3>Clean the tags and set one conversion per lead type</h3><p>Confirm which Ads account is live, remove the duplicate tag, move GA4 and Ads into GTM only, and set form, booked call, WhatsApp and phone as separate actions. Only qualified outcomes are primary.</p><div class="why">Why: bidding stops reacting to double counted or low value actions.</div></div></div>
+   <div class="step"><div class="sn">2</div><div><h3>Carry the click ID into Pipedrive</h3><p>Add hidden GCLID, GBRAID, WBRAID, country and UTM fields to the Squarespace forms and map them to custom fields on the Pipedrive deal. Turn on enhanced conversions for leads so scheduler bookings can be matched by hashed email.</p><div class="why">Why: every deal can be traced to the campaign, keyword and country that produced it.</div></div></div>
+   <div class="step"><div class="sn">3</div><div><h3>Import Pipedrive stages back into Google Ads</h3><p>Map stages such as Qualified, Call held and Reservation to conversion actions with values, uploaded on a daily schedule. Qualified lead becomes the bidding signal; raw form fills become secondary.</p><div class="why">Why: Google learns which searches bring buyers, not which bring the cheapest form fill.</div></div></div>
+   <div class="step"><div class="sn">4</div><div><h3>Group markets into a few clusters so bidding has data</h3><p>$3,000 split across many single country campaigns leaves each one starved. Countries are grouped by buyer value and language into two or three campaigns, with a small brand campaign. Rental, holiday and job searches are blocked with shared negative lists so hotel guests and villa buyers are kept apart.</p><div class="why">Why: enough conversions per campaign for Maximize conversions now, and target CPA once qualified volume supports it.</div></div></div>
+   <div class="step"><div class="sn">5</div><div><h3>Report by lead creation month, with market quality</h3><p>A short weekly note your team can read without marketing terms: spend, leads, qualified rate and stage progress by country, with leads counted in the month they were created. Clarity recordings feed the first landing page test with your web team.</p><div class="why">Why: budget moves toward the markets that produce deals, not just the cheapest leads.</div></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="dark">
+ <div class="wrap">
+  <div class="sh"><span class="num">03</span><h2>Comparable results</h2></div>
+  <p class="intro">From live accounts where the work was the same: fixing what the ad account counts, then pointing bidding at the outcome that matters.</p>
+  <div class="rgrid">
+   <div class="rc">
+    <div class="k">Confirmed bookings</div>
+    <div class="big">+140%</div>
+    <div class="sub">5 to 12 in one month</div>
+    <div class="bars">
+     <div class="br"><div class="bl"><span>Before</span><span>5</span></div><div class="track"><div class="fill" style="width:41.7%"></div></div></div>
+     <div class="br"><div class="bl"><span>After</span><span>12</span></div><div class="track"><div class="fill g" style="width:100%"></div></div></div>
+    </div>
+    <div class="ctx">Cosmetic surgery clinic, USD. Offline conversion uploads re-established, bidding pointed at confirmed bookings.</div>
+   </div>
+   <div class="rc">
+    <div class="k">Cost per conversion</div>
+    <div class="big">$46.15</div>
+    <div class="sub">down from $99.97, a 53.8% reduction</div>
+    <div class="bars">
+     <div class="br"><div class="bl"><span>Before</span><span>$99.97</span></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
+     <div class="br"><div class="bl"><span>After</span><span>$46.15</span></div><div class="track"><div class="fill g" style="width:46.2%"></div></div></div>
+    </div>
+    <div class="ctx">Same account, on level ad spend. Micro conversions reclassified so they stopped steering bids.</div>
+   </div>
+   <div class="rc">
+    <div class="k">Booking conversions tracked</div>
+    <div class="big">0 to 18</div>
+    <div class="sub">Book Appointment conversions, month one</div>
+    <div class="bars">
+     <div class="br"><div class="bl"><span>Before</span><span>0.00</span></div><div class="track"><div class="fill" style="width:1%"></div></div></div>
+     <div class="br"><div class="bl"><span>After</span><span>18.00</span></div><div class="track"><div class="fill g" style="width:100%"></div></div></div>
+    </div>
+    <div class="ctx">London plastic surgery clinic. Booking flow tracking captured enquiries that were previously uncounted.</div>
+   </div>
+  </div>
+  <p class="note">All figures are verified August 2026 account results.</p>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="sh"><span class="num">04</span><h2>What happens next</h2></div>
+  <div class="ngrid">
+   <div class="nc"><span class="num">STEP 1</span><h3>A short call</h3><p>15 minutes on your markets, which Pipedrive stages mean a qualified buyer, and the budget range I can move without sign off. Then the twice weekly review slots are set.</p></div>
+   <div class="nc"><span class="num">STEP 2</span><h3>Access, all in your name</h3><ul><li>Google Ads (both IDs)</li><li>GA4 and GTM</li><li>Pipedrive</li><li>Squarespace editor</li></ul></div>
+   <div class="nc"><span class="num">STEP 3</span><h3>First week</h3><p>Tag audit with a written conversion map, duplicate tags removed, primary actions set, and the click ID fields live on the forms. First weekly report goes out at the end of week one.</p></div>
+  </div>
+ </div>
+</section>
+
+<div class="cta">
+ <div class="wrap">
+  <h2>Let's have a quick call</h2>
+  <p>Reply to my message with a time that suits you.</p>
+ </div>
+</div>
+
+<footer><div class="wrap"><b>Usman Gull</b>, Google Ads and SEO Specialist</div></footer>
+
+</body>
+</html>
